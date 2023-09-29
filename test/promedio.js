@@ -30,4 +30,17 @@ describe('Promedio', function () {
     assert.equal(resultado.promedio, 2)
     assert.isFalse(resultado.error)
   })
+
+  it('Con desbordamiento', function () {
+    const acumular = sinon.stub().returns({ acumulador: 0, error: 1 })
+    const vector = [1, 2, 3]
+
+    var promedio = proxy('../src/promedio.js', {
+      '../src/suma.js': { acumular: acumular }
+    })
+    var resultado = promedio.promediar(vector)
+
+    assert.equal(resultado.promedio, 0)
+    assert.isTrue(resultado.error)
+  })
 })
