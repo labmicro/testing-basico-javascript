@@ -7,3 +7,10 @@
  *
  * SPDX-License-Identifier: MIT
  */
+
+const suma = require('./src/suma.js')
+
+let acumulador = 5
+let resultado = suma.acumular(acumulador, 3)
+
+console.log(`Resultado: ${resultado.acumulador}`)
