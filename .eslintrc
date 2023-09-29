@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/recommended",
+    "prettier"
+  ],
+  "plugins": ["import", "prettier", "license-header"],
+  "rules": {
+    "prettier/prettier": ["error", { "endOfLine": "auto" }],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "import/no-relative-packages": "error",
+    "import/prefer-default-export": "error",
+    "license-header/header": ["error", "./resources/license.js"]
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  }
+}
