@@ -21,4 +21,18 @@ describe('Suma con saturacion', function () {
     expect(resultado.acumulador).to.equal(8)
     expect(resultado.error).to.equal(0)
   })
+
+  it('Maximo positivo', function () {
+    let acumulador = 32765
+    let resultado = suma.acumular(acumulador, 3)
+    expect(resultado.acumulador).to.equal(32767)
+    expect(resultado.error).to.equal(1)
+  })
+
+  it('Maximo negativo', function () {
+    let acumulador = -32766
+    let resultado = suma.acumular(acumulador, -3)
+    expect(resultado.acumulador).to.equal(-32768)
+    expect(resultado.error).to.equal(-1)
+  })
 })
